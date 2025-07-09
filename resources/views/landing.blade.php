@@ -7,6 +7,9 @@
     <!-- Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jaro&display=swap" rel="stylesheet">
+
     <!-- Link ke CSS eksternal -->
     <link href="{{ asset('css/landing.css') }}" rel="stylesheet">
 </head>
