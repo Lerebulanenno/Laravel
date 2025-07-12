@@ -89,11 +89,56 @@
             <span class="stock-status">Tersedia</span>
         </div>
 
-        <div class="buttons-wrapper"> <button class="buy-now-btn">Beli Sekarang</button>
-        <button class="add-to-cart-btn">Tambah Keranjang</button>
+    <div class="buttons-wrapper">
+            <button class="buy-now-btn">Beli Sekarang</button>
+            <button class="add-to-cart-btn cart-icon-button" aria-label="Tambah Keranjang">
+            <i class="fas fa-shopping-cart"></i> </button>
+            </div>
+        </div>
     </div>
+</div>
+
+    <!-- Kartu Toko (Dipisah) -->
+    <div class="store-card-wrapper">
+        <div class="store-logo-name">
+        <img src="/images/Ellipse 2.png" alt="Von Dutch Logo" class="store-logo">
+        <span class="store-name">Von Dutch Official</span>
+    </div>
+    <div class="store-actions">
+        <button class="visit-store-btn">
+            <i class="fas fa-store"></i> Kunjungi Toko
+        </button>
+        </div>
     </div>
 
+    <div class="product-description-card">
+        <div class="section-header">Deskripsi Produk</div>
+        <div class="product-description-row">
+            <span class="label">Kategori</span>
+            <span class="value">BALIMART > Pakaian > Baju Wanita</span>
     </div>
+    <div class="product-description-row">
+        <span class="label">Stok</span>
+        <span class="value">TERSEDIA</span>
+    </div>
+        <div class="product-description-row">
+        <span class="label">Merek</span>
+        <span class="value">Von Dutch</span>
+    </div>
+        <div class="product-description-row">
+        <span class="label">Bahan</span>
+        <span class="value">chiffon</span>
+    </div>
+        <div class="product-description-row">
+        <span class="label">Asal</span>
+        <span class="value">Indonesia</span>
+    </div>
+        <div class="product-description-row">
+        <span class="label">Dikirm Dari</span>
+        <span class="value">Kota Denpasar</span>
+    </div>
+
+            
+
     </body>
 </html>

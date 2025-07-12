@@ -303,7 +303,7 @@ body {
   color: #F5F1D7;
   border: none;
   border-radius: 4px;
-  padding: 12px 25px;
+  padding: 10px 25px;
   font-weight: 600;
   font-size: 20px;
   cursor: pointer;
@@ -312,9 +312,76 @@ body {
   height: 40px;
 }
 
+.add-to-cart-btn {
+  margin: 20px auto 0;
+  margin-top: 120px;
+  background-color: #6f2b1c;
+  color: #F5F1D7;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 25px;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100px;
+  height: 40px;
+}
+
 .buy-now-btn:hover {
   background-color: #4e1d15;
 }
+
+/* --- Styling untuk Store Card (sesuai gambar "Von Dutch Official") --- */
+.store-card-wrapper {
+    background-color: #fffbe6;
+    padding: 20px 30px;
+    margin: 0 90px 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+
+.store-logo-name {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    color: #8C2D28;
+    font-size: 16px;
+}
+
+.store-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.visit-store-btn {
+    background-color: #fffbe6;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #6f2b1c;
+    font-weight: 400;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #8C2D28;
+}
+
+/*bagian style deskripsi produk*/
+.product-description-card {
+  background-color: #fffbe6;
+  padding: 30px 40px;
+  border-radius: 8px;
+  margin: 40px auto;
+  width: 1281px;
+  height: 568px;
+}
+
 
 /* Responsive untuk layar kecil */
 @media (max-width: 768px) {
