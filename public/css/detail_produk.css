@@ -237,9 +237,9 @@ body {
 }
 
 .option-button {
-  border: 1.5px solid #6f2b1c;
+  border: 1.5px solid #8C2D28;
   background-color: transparent;
-  color: #6f2b1c;
+  color: #8C2D28;
   padding: 6px 25px;
   border-radius: 6px;
   cursor: pointer;
@@ -249,7 +249,7 @@ body {
 }
 
 .option-button:hover {
-  background-color: #6f2b1c;
+  background-color: #8C2D28;
   color: #fdf8e4;
 }
 
@@ -263,7 +263,7 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-  border: 1.5px solid #6f2b1c;
+  border: 1.5px solid #8C2D28;
   border-radius: 6px;
   padding: 8px 16px;
   width: fit-content;
@@ -274,32 +274,32 @@ body {
   border: none;
   font-size: 18px;
   font-weight: bold;
-  color: #6f2b1c;
+  color: #8C2D28;
   cursor: pointer;
   width: 20px;
 }
 
 .qty-display {
   padding: 0px 20px;
-  border-left: 1px solid #6f2b1c;
-  border-right: 1px solid #6f2b1c;
+  border-left: 1px solid #8C2D28;
+  border-right: 1px solid #8C2D28;
   min-width: 32px;
   text-align: center;
   font-weight: bold;
   font-size: 16px;
-  color: #6f2b1c;
+  color: #8C2D28;
 }
 
 .stock-status {
   font-size: 14px;
   margin-left: 10px;
-  color: #6f2b1c;
+  color: #8C2D28;
 }
 
 .buy-now-btn {
   margin: 20px auto 0;
   margin-top: 120px;
-  background-color: #6f2b1c;
+  background-color: #8C2D28;
   color: #F5F1D7;
   border: none;
   border-radius: 4px;
@@ -315,7 +315,7 @@ body {
 .add-to-cart-btn {
   margin: 20px auto 0;
   margin-top: 120px;
-  background-color: #6f2b1c;
+  background-color: #8C2D28;
   color: #F5F1D7;
   border: none;
   border-radius: 4px;
@@ -336,8 +336,8 @@ body {
 .store-card-wrapper {
     background-color: #fffbe6;
     padding: 20px 30px;
-    margin: 0 90px 50px;
-    border-radius: 10px;
+    margin: 0 90px 10px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -363,7 +363,7 @@ body {
     background-color: #fffbe6;
     padding: 10px 20px;
     border-radius: 8px;
-    border: 1px solid #6f2b1c;
+    border: 1px solid #8C2D28;
     font-weight: 400;
     cursor: pointer;
     display: flex;
@@ -374,12 +374,85 @@ body {
 
 /*bagian style deskripsi produk*/
 .product-description-card {
-  background-color: #fffbe6;
-  padding: 30px 40px;
-  border-radius: 8px;
-  margin: 40px auto;
+  background-color: #fdf8e4;
+  border-radius: 5px;
+  padding: 20px 30px;
+  margin: 0 auto 30px;
   width: 1281px;
-  height: 568px;
+  height: 430px;
+}
+
+.section-header {
+    background-color: rgba(124, 45, 18, 0.1);
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #8C2D28;
+    margin-bottom: 20px;
+}
+
+.product-description-row {
+    display: grid;
+    grid-template-columns: 200px auto;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.label {
+  color: #8C2D28;
+  width: 200px;
+  font-weight: 500;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.value {
+  color: #8C2D28;
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 950px; /* Biar panjang teks terbatasi */
+}
+
+
+.product-rating-card {
+  background-color: #fdf8e4;
+  border-radius: 5px;
+  padding: 20px 30px;
+  margin: 0 auto 30px;
+  width: 1281px;
+  height: 700px;
+}
+
+.rating-header {
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #6f2b1c;
+  margin-bottom: 20px;
+}
+
+.rating-score {
+  background-color: rgba(124, 45, 18, 0.1);
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #6f2b1c;
+}
+
+.rating-score i {
+  color: gold;
+  font-size: 20px;
+}
+
+.rating-divider {
+  border-top: 1px solid #6f2b1c;
+  margin: 20px auto;
 }
 
 

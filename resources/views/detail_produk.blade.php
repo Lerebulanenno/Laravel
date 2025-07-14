@@ -113,30 +113,47 @@
 
     <div class="product-description-card">
         <div class="section-header">Deskripsi Produk</div>
-        <div class="product-description-row">
-            <span class="label">Kategori</span>
-            <span class="value">BALIMART > Pakaian > Baju Wanita</span>
-    </div>
+
     <div class="product-description-row">
-        <span class="label">Stok</span>
-        <span class="value">TERSEDIA</span>
+        <div class="label">Kategori</div>
+        <div class="value">BALIMART > Pakaian > Baju Wanita</div>
     </div>
-        <div class="product-description-row">
-        <span class="label">Merek</span>
-        <span class="value">Von Dutch</span>
+
+    <div class="product-description-row">
+        <div class="label">Stok</div>
+        <div class="value">TERSEDIA</div>
     </div>
-        <div class="product-description-row">
-        <span class="label">Bahan</span>
-        <span class="value">chiffon</span>
+
+    <div class="product-description-row">
+        <div class="label">Merek</div>
+        <div class="value">Von Dutch</div>
     </div>
-        <div class="product-description-row">
-        <span class="label">Asal</span>
-        <span class="value">Indonesia</span>
+
+    <div class="product-description-row">
+        <div class="label">Bahan</div>
+        <div class="value">chiffon</div>
     </div>
-        <div class="product-description-row">
-        <span class="label">Dikirm Dari</span>
-        <span class="value">Kota Denpasar</span>
+
+    <div class="product-description-row">
+        <div class="label">Asal</div>
+        <div class="value">Indonesia</div>
     </div>
+
+    <div class="product-description-row">
+        <div class="label">Dikirim Dari</div>
+        <div class="value">Kota Denpasar</div>
+    </div>
+</div>
+
+<div class="product-rating-card">
+    <div class="rating-header">Penilain Produk</div>
+
+    <div class="rating-score">
+        <span>5.0</span>
+        <i class="fas fa-star"></i>
+    </div>
+
+    <div class="rating-divider"></div>
 
             
 
