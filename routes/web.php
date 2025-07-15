@@ -50,3 +50,8 @@ Route::get('/produk/{id}', function ($id) {
 
     return view('detail_produk', compact('detail'));
 })->name('produk.detail');
+
+// Menampilkan halaman keranjang
+Route::get('/cart', function () {
+    return view('cart');
+})->name('cart');
