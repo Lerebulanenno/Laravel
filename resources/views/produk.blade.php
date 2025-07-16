@@ -30,10 +30,11 @@
     </div>
 
     <div class="icon-group">
-    <i class="fa fa-heart"></i>
-        <i class="fa fa-shopping-cart"></i>
-        <i class="fa fa-user"></i>
+        <button class="icon-btn"><i class="fa fa-heart"></i></button>
+        <button class="icon-btn"><i class="fa fa-shopping-cart"></i></button>
+        <button class="icon-btn"><i class="fa fa-user"></i></button>
     </div>
+
 </div>
 
 <!-- Container -->
