@@ -83,17 +83,21 @@ body {
 }
 
 /* Icon di kanan */
+/* Icon di kanan */
 .icon-group {
     display: flex;
     gap: 15px;
     align-items: center;
 }
 
-.icon-group span i,
-.icon-group button i {
+.icon-group i {
     font-size: 20px;
     color: #f5f5dc;
     cursor: pointer;
+}
+
+.icon-group a i {
+    color: #f5f5dc;
 }
 
 .icon-btn {
