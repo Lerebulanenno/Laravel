@@ -37,7 +37,7 @@
         <div class="hero-text">
             <h1>Dukung UMKM Bali</h1>
             <h1>Hidupkan Budaya Lewat Belanja</h1>
-            <a href="{{ route('produk') }}" class="cta">Mulai Belanja →</a>
+            <a href="{{ route('produk.index') }}" class="cta">Mulai Belanja →</a>
         </div>
     </section>
 

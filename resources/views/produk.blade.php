@@ -30,8 +30,10 @@
     </div>
 
     <div class="icon-group">
-    <i class="fa fa-heart"></i>
+        <i class="fa fa-heart"></i>
+         <a href="{{ route('cart') }}">
         <i class="fa fa-shopping-cart"></i>
+        </a>
         <i class="fa fa-user"></i>
     </div>
 </div>
