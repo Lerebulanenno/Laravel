@@ -36,6 +36,7 @@
         </a>
         <i class="fa fa-user"></i>
     </div>
+
 </div>
 
 <!-- Container -->
