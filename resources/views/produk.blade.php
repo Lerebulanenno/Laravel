@@ -77,17 +77,18 @@
 
         <div class="produk-grid">
             @foreach($produk as $item)
-            <a href="{{ route('produk.show', $item['id']) }}">
+            <a href="{{ route('produk.show', $item->id) }}">
                 <div class="produk-card">
-                    <img src="{{ asset('images/' . $item['gambar']) }}" alt="{{ $item['nama'] }}">
-                    <h3>{{ $item['nama'] }}</h3>
-                    <p>Rp {{ number_format($item['harga'], 0, ',', '.') }}</p>
+                    <img src="{{ asset('images/' . $item->gambar) }}" alt="{{ $item->nama }}">
+                    <h3>{{ $item->nama }}</h3>
+                    <p>Rp {{ number_format($item->harga, 0, ',', '.') }}</p>
                     <div class="rating-cart">
-                    <span class="rating">⭐ {{ number_format($item['rating'], 1) }}</span>
+                    <span class="rating">⭐ {{ number_format($item->rating, 1) }}</span>
                         <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
                         <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
                     </div>
                 </div>
+            </a>
             @endforeach
         </div>
     </main>
