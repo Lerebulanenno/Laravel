@@ -77,6 +77,7 @@
 
         <div class="produk-grid">
             @foreach($produk as $item)
+            <a href="{{ route('produk.show', $item['id']) }}">
                 <div class="produk-card">
                     <img src="{{ asset('images/' . $item['gambar']) }}" alt="{{ $item['nama'] }}">
                     <h3>{{ $item['nama'] }}</h3>

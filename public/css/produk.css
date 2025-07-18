@@ -229,6 +229,10 @@ body {
     font-size: 14px;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* ======== RATING & ACTION ======== */
 .rating-cart {
     display: flex;
