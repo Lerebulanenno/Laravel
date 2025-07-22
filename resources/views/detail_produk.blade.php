@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $detail['nama'] ?? 'Detail Produk' }} - BALIMART</title>
+    <title>{{ $produk->nama ?? 'Detail Produk' }} - BALIMART</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -30,31 +30,30 @@
 
     <nav class="breadcrumb">
         <a href="#">BALIMART</a> >
-        <a href="#">Pakaian</a> >
-        <a href="#">Baju Wanita</a> >
-        <span>Sheer ruched psychedelic crop top</span>
+        <a href="#">{{ $produk->kategori ?? 'Kategori' }}</a> >
+        <span>{{ $produk->nama }}</span>
     </nav>
 
     <div class="product-card">
     <!-- Gambar dulu -->
     <div class="images-section">
-        <img class="main-image" src="/images/crop.jpg" alt="Sheer ruched psychedelic crop top">
+        <img class="main-image" src="{{ asset('images/' . $produk->gambar) }}" alt="{{ $produk->nama }}">
         <div class="thumbnail">
-            <img src="/images/crop.jpg" alt="Thumbnail 1">
-            <img src="/images/crop.jpg" alt="Thumbnail 2">
+            <img src="{{ asset('images/' . $produk->gambar) }}" alt="{{ $produk->nama }}">
+            <img src="{{ asset('images/' . $produk->gambar) }}" alt="{{ $produk->nama }}">
         </div>
     </div>
 
     <!-- Baru detail produk -->
     <div class="product-detail">
-        <h2>Sheer ruched Psychedelic crop top</h2>
+        <h2>{{ $produk->nama }}</h2>
         <div class="rating">
             <i class="fa-solid fa-star"></i>
-            5.0 | 20 Penilaian | 30 Terjual
+            {{ $produk->rating ?? '0' }} | 0 Penilaian | 0 Terjual
         </div>
 
         <div class="price-box">
-            <div class="price">Rp. 100.000</div>
+            <div class="price">Rp. {{ number_format($produk->harga, 0, ',', '.') }}</div>
             <div class="icons">
                 <i class="fa-regular fa-heart"></i>
             </div>

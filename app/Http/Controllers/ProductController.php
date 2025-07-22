@@ -13,9 +13,14 @@ class ProductController extends Controller
         return view('produk', compact('produk'));
     }
 
-    public function show($id)
+    public function show(Product $produk)
     {
-        $detail = Product::findOrFail($id);
-        return view('detail_produk', compact('detail'));
+        // $produk = Product::find($id);
+
+        // if (!$produk) {
+        //     abort(404); //kalau produk gak ada
+        // }
+        
+       return view('detail_produk', compact('produk'));
     }
 }
