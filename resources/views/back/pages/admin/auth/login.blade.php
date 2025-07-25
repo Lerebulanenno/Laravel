@@ -6,7 +6,7 @@
     <div class="login-title">
         <h2 class="text-center text-primary">Admin Login</h2>
     </div>
-    <form action="{{ route('login_handler') }}" method="POST">
+    <form action="{{ route('login_handler') }}" method="POST" autocomplete="off">
         @csrf
 
         @if (Session::get('fail'))
@@ -20,7 +20,7 @@
         @endif
 
         <div class="input-group custom">
-            <input type="text" class="form-control form-control-lg" placeholder="Email/Username" name="login_id" value="{{ old('login_id') }}">
+            <input type="text" class="form-control form-control-lg" placeholder="Email/Username" name="login_id" value="{{ old('login_id') }}" value="" autocomplete="off">
             <div class="input-group-append custom">
                 <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
             </div>
@@ -30,7 +30,7 @@
         @enderror
 
         <div class="input-group custom">
-            <input type="password" class="form-control form-control-lg" placeholder="**********" name="password">
+            <input type="password" class="form-control form-control-lg" placeholder="**********" name="password" autocomplete="new-password">
             <div class="input-group-append custom">
                 <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
             </div>
@@ -48,7 +48,7 @@
             </div>
             <div class="col-6">
                 <div class="forgot-password text-right">
-                    <a href="{{ route('admin.forgot') }}">Forgot Password</a>
+                    <a href="{{ route('admin.forgot-password') }}">Forgot Password</a>
                 </div>
             </div>
         </div>
