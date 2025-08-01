@@ -5,25 +5,6 @@
 		<meta charset="utf-8" />
 		<title>@yield('pageTitle')</title>
 
-		<!-- Site favicon -->
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="/back/vendors/images/apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/back/vendors/images/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="/back/vendors/images/favicon-16x16.png"
-		/>
-
 		<!-- Mobile Specific Metas -->
 		<meta
 			name="viewport"
@@ -545,10 +526,7 @@
                     @yield('content')
 				</div>
 				<div class="footer-wrap pd-20 mb-20 card-box">
-					<!-- DeskApp - Bootstrap 4 Admin Template By
-					<a href="https://github.com/dropways" target="_blank"
-						>Ankit Hingarajiya</a
-					> -->
+
 				</div>
 			</div>
 		</div>

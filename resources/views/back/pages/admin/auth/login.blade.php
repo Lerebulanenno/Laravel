@@ -46,11 +46,11 @@
                     <label class="custom-control-label" for="customCheck1">Remember</label>
                 </div>
             </div>
-            <div class="col-6">
+            <!-- <div class="col-6">
                 <div class="forgot-password text-right">
                     <a href="{{ route('admin.forgot-password') }}">Forgot Password</a>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="row">
