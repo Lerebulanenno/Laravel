@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- Basic Page Info -->
-		<meta charset="utf-8" />
-		<title>@yield('pageTitle')</title>
+    <head>
+        <meta charset="utf-8" />
+        <title>@yield('pageTitle', 'Admin Panel')</title>
 
-		<!-- Mobile Specific Metas -->
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, maximum-scale=1"
-		/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
 
-		<!-- Google Font -->
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="/back/vendors/styles/core.css" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="/back/vendors/styles/icon-font.min.css"
-		/>
-		<link rel="stylesheet" type="text/css" href="/back/vendors/styles/style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="{{ asset('back/vendors/styles/core.css') }}" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ asset('back/vendors/styles/icon-font.min.css') }}"
+        />
+        <link rel="stylesheet" type="text/css" href="{{ asset('back/vendors/styles/style.css') }}" />
+        @stack('stylesheets')
 
-		
-		<!-- Google Tag Manager -->
-		<script>
-			(function (w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != "dataLayer" ? "&l=" + l : "";
-				j.async = true;
-				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
-		</script>
-		<!-- End Google Tag Manager -->
-         @stack('stylesheets')
-	</head>
-	<body>
-		<div class="pre-loader">
-			<div class="pre-loader-box">
-				<div class="loader-logo">
-					<!-- <img src="/back/vendors/images/deskapp-logo.svg" alt="" /> -->
-				</div>
-				<div class="loader-progress" id="progress_div">
-					<div class="bar" id="bar1"></div>
-				</div>
-				<div class="percent" id="percent1">0%</div>
-				<div class="loading-text">Loading...</div>
-			</div>
-		</div>
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+        </script>
+        </head>
+    <body>
+        <noscript
+            ><iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
+                height="0"
+                width="0"
+                style="display: none; visibility: hidden"
+            ></iframe
+        ></noscript>
+        <div class="pre-loader">
+            <div class="pre-loader-box">
+                <div class="loader-logo">
+                    </div>
+                <div class="loader-progress" id="progress_div">
+                    <div class="bar" id="bar1"></div>
+                </div>
+                <div class="percent" id="percent1">0%</div>
+                <div class="loading-text">Loading...</div>
+            </div>
+        </div>
 
-		<div class="header">
+        <div class="header">
 			<div class="header-left">
 				<div class="menu-icon bi bi-list"></div>
 				<div
@@ -147,73 +147,11 @@
 						</a>
 						<div class="dropdown-menu dropdown-menu-right">
 							<div class="notification-list mx-h-350 customscroll">
-								<ul>
-									<li>
-										<a href="#">
-											<img src="/back/vendors/images/img.jpg" alt="" />
-											<h3>John Doe</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="/back/vendors/images/photo1.jpg" alt="" />
-											<h3>Lea R. Frith</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="/back/vendors/images/photo2.jpg" alt="" />
-											<h3>Erik L. Richards</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="/back/vendors/images/photo3.jpg" alt="" />
-											<h3>John Doe</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="/back/vendors/images/photo4.jpg" alt="" />
-											<h3>Renee I. Hansen</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="/back/vendors/images/img.jpg" alt="" />
-											<h3>Vicki M. Coleman</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-								</ul>
+								
 							</div>
 						</div>
 					</div>
 				</div>
-
 				<div class="user-info-dropdown">
 					<div class="dropdown">
 						<a
@@ -223,9 +161,9 @@
 							data-toggle="dropdown"
 						>
 							<span class="user-icon">
-								<img src="/back/vendors/images/photo1.jpg" alt="" />
+								<img src="vendors/images/photo1.jpg" alt="" />
 							</span>
-							<span class="user-name">Ross C. Lopez</span>
+							<span class="user-name">Anggreni</span>
 						</a>
 						<div
 							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
@@ -245,22 +183,13 @@
 <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
     <i class="dw dw-logout"></i> Log Out
 </a>
-
 						</div>
 					</div>
-				</div>
-
-
-
-				<div class="github-link">
-					<!-- <a href="https://github.com/dropways/deskapp" target="_blank"
-						><img src="/back/vendors/images/github.svg" alt=""
-					/></a> -->
 				</div>
 			</div>
 		</div>
 
-		<div class="right-sidebar">
+        <div class="right-sidebar">
 			<div class="sidebar-title">
 				<h3 class="weight-600 font-16 text-blue">
 					Layout Settings
@@ -302,125 +231,7 @@
 						>
 					</div>
 
-					<h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
-					<div class="sidebar-radio-group pb-10 mb-10">
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebaricon-1"
-								name="menu-dropdown-icon"
-								class="custom-control-input"
-								value="icon-style-1"
-								checked=""
-							/>
-							<label class="custom-control-label" for="sidebaricon-1"
-								><i class="fa fa-angle-down"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebaricon-2"
-								name="menu-dropdown-icon"
-								class="custom-control-input"
-								value="icon-style-2"
-							/>
-							<label class="custom-control-label" for="sidebaricon-2"
-								><i class="ion-plus-round"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebaricon-3"
-								name="menu-dropdown-icon"
-								class="custom-control-input"
-								value="icon-style-3"
-							/>
-							<label class="custom-control-label" for="sidebaricon-3"
-								><i class="fa fa-angle-double-right"></i
-							></label>
-						</div>
-					</div>
-
-					<h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
-					<div class="sidebar-radio-group pb-30 mb-10">
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-1"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-1"
-								checked=""
-							/>
-							<label class="custom-control-label" for="sidebariconlist-1"
-								><i class="ion-minus-round"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-2"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-2"
-							/>
-							<label class="custom-control-label" for="sidebariconlist-2"
-								><i class="fa fa-circle-o" aria-hidden="true"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-3"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-3"
-							/>
-							<label class="custom-control-label" for="sidebariconlist-3"
-								><i class="dw dw-check"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-4"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-4"
-								checked=""
-							/>
-							<label class="custom-control-label" for="sidebariconlist-4"
-								><i class="icon-copy dw dw-next-2"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-5"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-5"
-							/>
-							<label class="custom-control-label" for="sidebariconlist-5"
-								><i class="dw dw-fast-forward-1"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-6"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-6"
-							/>
-							<label class="custom-control-label" for="sidebariconlist-6"
-								><i class="dw dw-next"></i
-							></label>
-						</div>
-					</div>
-
+					
 					<div class="reset-options pt-30 text-center">
 						<button class="btn btn-danger" id="reset-settings">
 							Reset Settings
@@ -430,7 +241,7 @@
 			</div>
 		</div>
 
-		<div class="left-side-bar">
+        <div class="left-side-bar">
 			<div class="brand-logo">
 				<a href="index.html">
 	<span class="dark-logo" style="font-weight:bold; font-size:24px; color:#000;">BALIMART</span>
@@ -481,71 +292,342 @@
 				</div>
 			</div>
 		</div>
-		<div class="mobile-menu-overlay"></div>
+        
+        <div class="mobile-menu-overlay"></div>
 
-		<div class="main-container">
-			<div class="pd-ltr-20 xs-pd-20-10">
-				<div class="min-height-200px">
-					<div class="page-header">
-						<div class="row">
-							<div class="col-md-6 col-sm-12">
-								<div class="title">
-									<h4>blank</h4>
+        <div class="main-container">
+			<div class="pd-ltr-20">
+				<div class="card-box pd-20 height-100-p mb-30">
+					<div class="row align-items-center">
+						<div class="col-md-4">
+							<img src="/back/vendors/images/banner-img.png" alt="" />
+						</div>
+						<div class="col-md-8">
+							<h4 class="font-20 weight-500 mb-10 text-capitalize">
+								Welcome back
+								<div class="weight-600 font-30 text-blue">Anggreni</div>
+							</h4>
+							<p class="font-18 max-width-600">
+								
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-3 mb-30">
+						<div class="card-box height-100-p widget-style1">
+							<div class="d-flex flex-wrap align-items-center">
+								<div class="progress-data">
+									<div id="chart"></div>
 								</div>
-								<nav aria-label="breadcrumb" role="navigation">
-									<ol class="breadcrumb">
-										<li class="breadcrumb-item">
-											<a href="index.html">Home</a>
-										</li>
-										<li class="breadcrumb-item active" aria-current="page">
-											blank
-										</li>
-									</ol>
-								</nav>
-							</div>
-							<div class="col-md-6 col-sm-12 text-right">
-								<div class="dropdown">
-									<a
-										class="btn btn-primary dropdown-toggle"
-										href="#"
-										role="button"
-										data-toggle="dropdown"
-									>
-										January 2025
-									</a>
-									<div class="dropdown-menu dropdown-menu-right">
-										<a class="dropdown-item" href="#">Export List</a>
-										<a class="dropdown-item" href="#">Policies</a>
-										<a class="dropdown-item" href="#">View Assets</a>
-									</div>
+								<div class="widget-data">
+									<div class="h4 mb-0">2020</div>
+									<div class="weight-600 font-14">Contact</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="pd-20 bg-white border-radius-4 box-shadow mb-30"></div>
+					<div class="col-xl-3 mb-30">
+						<div class="card-box height-100-p widget-style1">
+							<div class="d-flex flex-wrap align-items-center">
+								<div class="progress-data">
+									<div id="chart2"></div>
+								</div>
+								<div class="widget-data">
+									<div class="h4 mb-0">400</div>
+									<div class="weight-600 font-14">Deals</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 mb-30">
+						<div class="card-box height-100-p widget-style1">
+							<div class="d-flex flex-wrap align-items-center">
+								<div class="progress-data">
+									<div id="chart3"></div>
+								</div>
+								<div class="widget-data">
+									<div class="h4 mb-0">350</div>
+									<div class="weight-600 font-14">Campaign</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 mb-30">
+						<div class="card-box height-100-p widget-style1">
+							<div class="d-flex flex-wrap align-items-center">
+								<div class="progress-data">
+									<div id="chart4"></div>
+								</div>
+								<div class="widget-data">
+									<div class="h4 mb-0">$6060</div>
+									<div class="weight-600 font-14">Worth</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-8 mb-30">
+						<div class="card-box height-100-p pd-20">
+							<h2 class="h4 mb-20">Activity</h2>
+							<div id="chart5"></div>
+						</div>
+					</div>
+					<div class="col-xl-4 mb-30">
+						<div class="card-box height-100-p pd-20">
+							<h2 class="h4 mb-20">Lead Target</h2>
+							<div id="chart6"></div>
+						</div>
+					</div>
+				</div>
+				<div class="card-box mb-30">
+					<h2 class="h4 pd-20">Best Selling Products</h2>
+					<table class="data-table table nowrap">
+						<thead>
+							<tr>
+								<th class="table-plus datatable-nosort">Product</th>
+								<th>Name</th>
+								<th>Color</th>
+								<th>Size</th>
+								<th>Price</th>
+								<th>Oty</th>
+								<th class="datatable-nosort">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="table-plus">
+									<img
+										src="/back/vendors/images/product-1.jpg"
+										width="70"
+										height="70"
+										alt=""
+									/>
+								</td>
+								<td>
+									<h5 class="font-16">Baju</h5>
+								</td>
+								<td>Hitam</td>
+								<td>M</td>
+								<td>Rp 100000</td>
+								<td>1</td>
+								<td>
+									<div class="dropdown">
+										<a
+											class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+											href="#"
+											role="button"
+											data-toggle="dropdown"
+										>
+											<i class="dw dw-more"></i>
+										</a>
+										<div
+											class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+										>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-eye"></i> View</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-edit2"></i> Edit</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-delete-3"></i> Delete</a
+											>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="table-plus">
+									<img
+										src="/back/vendors/images/product-2.jpg"
+										width="70"
+										height="70"
+										alt=""
+									/>
+								</td>
+								<td>
+									<h5 class="font-16">Sepatu</h5>
+								
+								</td>
+								<td>Coklat</td>
+								<td>45</td>
+								<td>Rp 900000</td>
+								<td>34</td>
+								<td>
+									<div class="dropdown">
+										<a
+											class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+											href="#"
+											role="button"
+											data-toggle="dropdown"
+										>
+											<i class="dw dw-more"></i>
+										</a>
+										<div
+											class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+										>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-eye"></i> View</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-edit2"></i> Edit</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-delete-3"></i> Delete</a
+											>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="table-plus">
+									<img
+										src="/back/vendors/images/product-3.jpg"
+										width="70"
+										height="70"
+										alt=""
+									/>
+								</td>
+								<td>
+									<h5 class="font-16">Topi</h5>
+								</td>
+								<td>Orange</td>
+								<td>XL</td>
+								<td>Rp 100000</td>
+								<td>4</td>
+								<td>
+									<div class="dropdown">
+										<a
+											class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+											href="#"
+											role="button"
+											data-toggle="dropdown"
+										>
+											<i class="dw dw-more"></i>
+										</a>
+										<div
+											class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+										>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-eye"></i> View</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-edit2"></i> Edit</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-delete-3"></i> Delete</a
+											>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="table-plus">
+									<img
+										src="/back/vendors/images/product-4.jpg"
+										width="70"
+										height="70"
+										alt=""
+									/>
+								</td>
+								<td>
+									<h5 class="font-16">Dress</h5>
+									
+								</td>
+								<td>Abu-Abu</td>
+								<td>L</td>
+								<td>Rp 1000000</td>
+								<td>13</td>
+								<td>
+									<div class="dropdown">
+										<a
+											class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+											href="#"
+											role="button"
+											data-toggle="dropdown"
+										>
+											<i class="dw dw-more"></i>
+										</a>
+										<div
+											class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+										>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-eye"></i> View</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-edit2"></i> Edit</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-delete-3"></i> Delete</a
+											>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="table-plus">
+									<img
+										src="/back/vendors/images/product-5.jpg"
+										width="70"
+										height="70"
+										alt=""
+									/>
+								</td>
+								<td>
+									<h5 class="font-16">Blazer</h5>
+									
+								</td>
+								<td>Biru</td>
+								<td>M</td>
+								<td>Rp 1000000</td>
+								<td>22</td>
+								<td>
+									<div class="dropdown">
+										<a
+											class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+											href="#"
+											role="button"
+											data-toggle="dropdown"
+										>
+											<i class="dw dw-more"></i>
+										</a>
+										<div
+											class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
+										>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-eye"></i> View</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-edit2"></i> Edit</a
+											>
+											<a class="dropdown-item" href="#"
+												><i class="dw dw-delete-3"></i> Delete</a
+											>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
                     @yield('content')
-				</div>
-				<div class="footer-wrap pd-20 mb-20 card-box">
-
-				</div>
-			</div>
-		</div>
-
-		<!-- js -->
-		<script src="/back/vendors/scripts/core.js"></script>
-		<script src="/back/vendors/scripts/script.min.js"></script>
-		<script src="/back/vendors/scripts/process.js"></script>
-		<script src="/back/vendors/scripts/layout-settings.js"></script>
-		<script>
-			if ( navigator.userAgent.indexOf("Firefox") !== -1 ) {
-				history.pushState(null, null, document.URL);
-				window.addEventListener ("popstate", function () {
-					history.pushState(null, null, document.URL);
-				});
-			}
-		</script>
-		<!-- Google Tag Manager (noscript) -->
-		@stack('scripts')
-		
-	</body>
+            </div>
+        </div>
+        
+        <script src="{{ asset('back/vendors/scripts/core.js') }}"></script>
+        <script src="{{ asset('back/vendors/scripts/script.min.js') }}"></script>
+        <script src="{{ asset('back/vendors/scripts/process.js') }}"></script>
+        <script src="{{ asset('back/vendors/scripts/layout-settings.js') }}"></script>
+        <script>
+            if ( navigator.userAgent.indexOf("Firefox") !== -1 ) {
+                history.pushState(null, null, document.URL);
+                window.addEventListener ("popstate", function () {
+                    history.pushState(null, null, document.URL);
+                });
+            }
+        </script>
+        @stack('scripts')
+    </body>
 </html>
