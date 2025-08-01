@@ -79,6 +79,9 @@ body {
     cursor: pointer;
 }
 
+.search-container button i {
+  color: #8C2D28;
+}
 
 /* ------------------------------------- */
 /* CART HEADER */

@@ -93,7 +93,8 @@
 
                     <div class="buttons-wrapper">
                         <button class="buy-now-btn">Beli Sekarang</button>
-                
+
+                            @auth
                             <button type="button" class="add-to-cart-btn cart-icon-button"
                                 data-id="{{ $produk->id }}"
                                 data-nama="{{ $produk->nama }}"
@@ -101,6 +102,13 @@
                                 data-gambar="{{ $produk->gambar }}">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
+                            @else
+                                <a href="{{ route('login') }}">
+                                    <button type="button" class="add-to-cart-btn cart-icon-button">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </a>
+                            @endauth
                     </div>
                 </div>
             </div>
@@ -170,9 +178,9 @@
         document.querySelectorAll('.add-to-cart-btn').forEach(button => {
         button.addEventListener('click', function() {
             const data = {
-             id: this.dataset.id,
+             id: parseInt(this.dataset.id),
                 nama: this.dataset.nama,
-                harga: this.dataset.harga,
+                harga: parseInt(this.dataset.harga),
                 gambar: this.dataset.gambar,
                 _token: '{{ csrf_token() }}'
             };

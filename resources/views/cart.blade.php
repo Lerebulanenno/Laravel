@@ -43,10 +43,11 @@
                     <input type="checkbox" id="selectAll">
                     <label for="selectAll">Pilih Semua</label>
                 </div>
-                <form action="{{ route('cart', $cart['id']) }}" method="POST" style="display:inline;">
+                <form  id="deleteSelectedForm" action="{{ route('cart.deleteSelected') }}" method="POST">
                     @csrf
-                    @method ('DELETE')
-                    <button type="submit" class="delete-btn" title="Hapus Semua">
+                    @method('DELETE')
+                    <input type="hidden" name="selected_ids" id="selectedIdsInput">
+                    <button type="submit" class="delete-btn" title="Hapus Produk Terpilih">
                         <i class="fas fa-trash"></i>
                     </button>
                 </form>
@@ -56,23 +57,15 @@
             @foreach ($cart as $index => $item)
                 <div class="cart-item-box">
                     <div class="cart-item-left">
-                        <input type="checkbox" class="select-item" data-harga="{{ $item['harga'] }}">
+                        <input type="checkbox" 
+                            class="select-item"
+                            data-id="{{ $item['id'] }}"
+                            data-harga="{{ $item['harga'] }}">
                         <img src="{{ asset('images/' . $item['gambar']) }}" alt="{{ $item['nama'] }}">
                         <span class="product-name">{{ $item['nama'] }}</span>
                     </div>
                     <div class="cart-item-right">
-                        <span class="product-price">Rp {{ number_format($item['harga'], 0, ',', '.') }}</span>
-                        <form action="{{ route('cart', $index) }}" method="POST">
-                            @csrf
-                        
-                        {{-- Tambahan: Form hapus produk per item --}}
-                            <form action="{{ route('cart.destroy', $item['id']) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="delete-btn" title="Hapus Produk">
-                                    <i class="fas fa-trash"></i>
-                            </button>
-                        </form>
+                       <span class="product-price">Rp {{ number_format($item['harga'], 0, ',', '.') }}</span>
                     </div>
                 </div>
             @endforeach
@@ -131,6 +124,24 @@
 
         //Inisialisasi total saat halaman pertama kali load
         hitungTotal();
+
+    
+        // Submit form deleteSelected: kirim ID yang dicentang
+        document.getElementById('deleteSelectedForm')?.addEventListener('submit', function (e) {
+            const selectedCheckboxes = document.querySelectorAll('.select-item:checked');
+            const selectedIds = Array.from(selectedCheckboxes).map(cb => cb.dataset.id);
+
+        if (selectedIds.length === 0) {
+            e.preventDefault();
+            alert('Pilih setidaknya satu produk untuk dihapus.');
+            return;
+        }
+
+        document.getElementById('selectedIdsInput').value = JSON.stringify(selectedIds);
+    });
+
+    // Inisialisasi total saat load halaman
+    hitungTotal();
     </script>
 
 </body>

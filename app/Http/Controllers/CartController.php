@@ -37,7 +37,7 @@ class CartController extends Controller
         return redirect()->route('cart');
     }
 
-    // Menghapus produk dari keranjang
+    // Menghapus satu produk dari keranjang
     public function destroy($id)
     {
         $cart = session()->get('cart', []);
@@ -50,5 +50,22 @@ class CartController extends Controller
         session()->put('cart', $cart);
 
         return redirect()->route('cart')->with('success', 'Produk berhasil dihapus dari keranjang!');
+    }
+
+    // ✅ Hapus beberapa produk sekaligus
+    public function deleteSelected(Request $request)
+    {
+        $selectedIds = json_decode($request->selected_ids, true);
+
+        $cart = session()->get('cart', []);
+
+        // Hapus produk yang ID-nya ada di selectedIds
+        $cart = array_filter($cart, function ($item) use ($selectedIds) {
+            return !in_array($item['id'], $selectedIds);
+        });
+
+        session()->put('cart', array_values($cart)); // Re-index array
+
+        return redirect()->route('cart')->with('success', 'Produk terpilih berhasil dihapus!');
     }
 }
