@@ -36,8 +36,8 @@
     <div class="login-wrapper">
     <!-- Kiri -->
     <div class="login-left">
-      <img src="{{ asset('images/login.png') }}" alt="Ilustrasi Belanja" />
       <h2>Temukan Pilihan Terbaikmu!</h2>
+      <img src="{{ asset('images/login.png') }}" alt="Ilustrasi Belanja" />
     </div>
 
     <!-- Kanan -->

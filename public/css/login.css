@@ -102,13 +102,13 @@ html, body {
 }
 
 .login-left img {
-    max-width: 80%;
-    height: auto;
+    width: 550px;
+    height: 550px;
 }
 
 .login-left h2 {
-    margin-top: 20px;
-    font-size: 24px;
+    margin-top: 10px;
+    font-size: 30px;
     color: #8C2D28;
     font-weight: bold;
 }
