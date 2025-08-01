@@ -35,7 +35,7 @@ Route::get('/admin/login', function () {
 Route::post('/login_handler', [AdminController::class, 'loginHandler'])->name('login_handler');
 
 Route::get('/admin/home', function () {
-    return view('back.pages.admin.home');
+    return view('back.pages.admin.home'); 
 })->name('admin.home');
 
 Route::post('/admin/logout', [AdminController::class, 'logoutHandler'])->name('admin.logout');
