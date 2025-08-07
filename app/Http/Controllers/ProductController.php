@@ -15,12 +15,9 @@ class ProductController extends Controller
 
     public function show(Product $produk)
     {
-        // $produk = Product::find($id);
+        // Simpan ID produk ke session untuk redirect setelah login
+        session(['produk_redirect' => $produk->id]);
 
-        // if (!$produk) {
-        //     abort(404); //kalau produk gak ada
-        // }
-        
-       return view('detail_produk', compact('produk'));
+        return view('detail_produk', compact('produk'));
     }
 }
