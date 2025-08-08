@@ -7,17 +7,30 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $produk = Product::all();
+        $query = Product::query();
+
+        // Filter Lokasi (jika ada)
+        if ($request->filled('lokasi')) {
+            $query->whereIn('lokasi', $request->lokasi);
+        }
+
+        // Filter Kategori (jika ada)
+        if ($request->filled('kategori')) {
+            $query->where('kategori', $request->kategori);
+        }
+
+        $produk = $query->get();
+
         return view('produk', compact('produk'));
     }
 
     public function show(Product $produk)
     {
-        // Simpan ID produk ke session untuk redirect setelah login
         session(['produk_redirect' => $produk->id]);
-
         return view('detail_produk', compact('produk'));
     }
 }
+
+

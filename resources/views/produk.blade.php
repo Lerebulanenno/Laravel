@@ -31,44 +31,47 @@
 
     <div class="icon-group">
         <i class="fa fa-heart"></i>
-         <a href="{{ route('cart') }}">
-        <i class="fa fa-shopping-cart"></i>
+        <a href="{{ route('cart') }}">
+            <i class="fa fa-shopping-cart"></i>
         </a>
         <i class="fa fa-user"></i>
     </div>
-
 </div>
 
 <!-- Container -->
 <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
-        <div class="filter-section">
-            <h4><i class="fa-solid fa-location-dot"></i> Lokasi</h4>
-            <label><input type="checkbox" name="lokasi[]" value="Badung"> Badung</label>
-            <label><input type="checkbox" name="lokasi[]" value="Bangli"> Bangli</label>
-            <label><input type="checkbox" name="lokasi[]" value="Buleleng"> Buleleng</label>
-            <label><input type="checkbox" name="lokasi[]" value="Denpasar"> Denpasar</label>
-            <label><input type="checkbox" name="lokasi[]" value="Gianyar"> Gianyar</label>
-            <label><input type="checkbox" name="lokasi[]" value="Jembrana"> Jembrana</label>
-            <label><input type="checkbox" name="lokasi[]" value="Karangasem"> Karangasem</label>
-            <label><input type="checkbox" name="lokasi[]" value="Klungkung"> Klungkung</label>
-            <label><input type="checkbox" name="lokasi[]" value="Tabanan"> Tabanan</label>
-        </div>
+        <form id="filterForm" action="{{ route('produk.index') }}" method="GET">
+            <div class="filter-section">
+                <h4><i class="fa-solid fa-location-dot"></i> Lokasi</h4>
+                @foreach(['Badung','Bangli','Buleleng','Denpasar','Gianyar','Jembrana','Karangasem','Klungkung','Tabanan'] as $lokasi)
+                    <label>
+                        <input type="checkbox" name="lokasi[]" value="{{ $lokasi }}" 
+                            {{ in_array($lokasi, request('lokasi', [])) ? 'checked' : '' }}>
+                        {{ $lokasi }}
+                    </label>
+                @endforeach
+            </div>
 
-        <div class="filter-section">
-            <h4><i class="fa-solid fa-list"></i> Kategori</h4>
-            <ul>
-                <li><a href="#" class="kategori-item active" data-kategori="Pakaian">Pakaian</a></li>
-                <li><a href="#" class="kategori-item" data-kategori="Kuliner">Kuliner</a></li>
-                <li><a href="#" class="kategori-item" data-kategori="Kerajinan Tangan">Kerajinan Tangan</a></li>
-                <li><a href="#" class="kategori-item" data-kategori="Kebutuhan Upacara">Kebutuhan Upacara</a></li>
-                <li><a href="#" class="kategori-item" data-kategori="Kesehatan">Kesehatan</a></li>
-                <li><a href="#" class="kategori-item" data-kategori="Elektronik">Elektronik</a></li>
-                <li><a href="#" class="kategori-item" data-kategori="Bangunan & Pertanian">Bangunan & Pertanian</a></li>
-                <li><a href="#" class="kategori-item" data-kategori="Bayi & Anak-anak">Bayi & Anak-anak</a></li>
-            </ul>
-        </div>
+             <!-- Kategori -->
+            <div class="filter-section">
+    <h4><i class="fa-solid fa-list"></i> Kategori</h4>
+    <ul>
+        @foreach(['Pakaian','Kuliner','Kerajinan Tangan','Kebutuhan Upacara','Kesehatan','Elektronik','Bangunan & Pertanian','Bayi & Anak-anak'] as $kategori)
+            <li>
+                <a href="{{ route('produk.index', array_merge(request()->except('page'), ['kategori' => $kategori])) }}" 
+                   class="kategori-item {{ request('kategori') === $kategori ? 'active' : '' }}" 
+                   data-kategori="{{ $kategori }}">
+                    {{ $kategori }}
+                </a>
+            </li>
+        @endforeach
+    </ul>
+</div>
+
+
+        </form>
     </aside>
 
     <!-- Konten Utama -->
@@ -76,45 +79,59 @@
         <h4>KAMU MUNGKIN SUKA</h4>
 
         <div class="produk-grid">
-            @foreach($produk as $item)
-            <a href="{{ route('produk.show', $item->id) }}">
-                <div class="produk-card">
-                    <img src="{{ asset('images/' . $item->gambar) }}" alt="{{ $item->nama }}">
-                    <h3>{{ $item->nama }}</h3>
-                    <p>Rp {{ number_format($item->harga, 0, ',', '.') }}</p>
-                    <div class="rating-cart">
+    @forelse($produk as $item)
+        <a href="{{ route('produk.show', $item->id) }}">
+            <div class="produk-card">
+                <img src="{{ asset('images/' . $item->gambar) }}" alt="{{ $item->nama }}">
+                <h3>{{ $item->nama }}</h3>
+                <p>Rp {{ number_format($item->harga, 0, ',', '.') }}</p>
+                <div class="rating-cart">
                     <span class="rating">⭐ {{ number_format($item->rating, 1) }}</span>
-                        <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
-                        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
-                    </div>
+                    <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+                    <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
                 </div>
-            </a>
-            @endforeach
+            </div>
+        </a>
+    @empty
+        {{-- Popup muncul kalau produk kosong --}}
+        <div id="popupAlert" class="popup-overlay">
+            <div class="popup-box">
+                <p>Produk yang anda cari tidak terdaftar</p>
+                <button id="popupOk">OK</button>
+            </div>
         </div>
-    </main>
+    @endforelse
 </div>
 
-<!-- JS: Kategori aktif -->
 <script>
-    const kategoriLinks = document.querySelectorAll('.kategori-item');
+    // Auto-submit saat checkbox atau radio diubah
+    document.querySelectorAll('#filterForm input').forEach(input => {
+        input.addEventListener('change', function() {
+            document.getElementById('filterForm').submit();
+        });
+    });
 
-    kategoriLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
+    // Toggle favorit
+    document.querySelectorAll('.fav-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
             e.preventDefault();
-            kategoriLinks.forEach(k => k.classList.remove('active'));
-            this.classList.add('active');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-regular');
+            icon.classList.toggle('fa-solid');
         });
     });
 </script>
 
-
 <script>
-document.querySelectorAll('.fav-btn').forEach(btn => {
-    btn.addEventListener('click', function () {
-        const icon = this.querySelector('i');
-        icon.classList.toggle('fa-regular');
-        icon.classList.toggle('fa-solid');
-    });
+document.addEventListener("DOMContentLoaded", function() {
+    const popup = document.getElementById("popupAlert");
+    const btn = document.getElementById("popupOk");
+
+    if (popup && btn) {
+        btn.addEventListener("click", function() {
+            popup.style.display = "none";
+        });
+    }
 });
 </script>
 
